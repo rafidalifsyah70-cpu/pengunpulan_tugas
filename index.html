@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengumpulan Tugas</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 30px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    margin-bottom: 30px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-right span {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #9982af);
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+thead {
+    background: rgba(0,0,0,0.25);
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+}
+
+tbody tr {
+    background: rgba(255,255,255,0.12);
+    transition: 0.3s;
+}
+
+tbody tr:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+.btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-link {
+    background: #3498db;
+}
+
+.btn-pdf {
+    background: #e74c3c;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+@media(max-width: 768px) {
+    table {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+<body>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-left">
+        <div class="logo">SIF</div>
+        <div class="nav-title">01SIFP008 • PWEB 1</div>
+    </div>
+    <div class="nav-right">
+        <span>Universitas Pamulang• 2026</span>
+    </div>
+</div>
+
+<div class="container">
+    <h1>📚 Pengumpulan Tugas 01SIFP008</h1>
+    <div class="subtitle">
+        Mata Kuliah PWEB1 • Tahun 2026
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Link</th>
+                <th>PDF</th>
+            </tr>
+        </thead>
+        <tbody id="dataTugas">
+            <!-- Data dari Google Sheet -->
+        </tbody>
+    </table>
+
+    <footer>
+        © 2025 • Sistem Pengumpulan Tugas
+    </footer>
+</div>
+
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2IL61rnKBO29PUjq6sfLkE0jXJ0LRP0f2mnNTvjlwevA2p0WWuVAVvVgvL4DT12FLGEi_hlrPtEpO/pub?gid=0&single=true&output=csv";
+
+fetch(sheetURL)
+.then(res => res.text())
+.then(text => {
+    const rows = text.split("\n").slice(1);
+    let no = 1;
+    let html = "";
+
+    rows.forEach(row => {
+        if(row.trim() !== ""){
+            const col = row.split(",");
+            html += `
+            <tr>
+                <td>${no++}</td>
+                <td>${col[0]}</td>
+                <td>${col[1]}</td>
+                <td>
+                    <a class="btn btn-link" href="${col[2]}" target="_blank">Link</a>
+                </td>
+                <td>
+                    <a class="btn btn-pdf" href="${col[3]}" target="_blank">PDF</a>
+                </td>
+            </tr>
+            `;
+        }
+    });
+
+    document.getElementById("dataTugas").innerHTML = html;
+});
+</script>
+
+</body>
+</html>
