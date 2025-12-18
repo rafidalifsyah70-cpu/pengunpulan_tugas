@@ -2,193 +2,82 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pengumpulan Tugas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home • 01SIFP008</title>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-* {
-    box-sizing: border-box;
+body {
+    background: #f4f6f8;
     font-family: 'Segoe UI', sans-serif;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #667eea, #9982af);
-    padding: 20px;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(14px);
-    border-radius: 14px;
-    margin-bottom: 20px;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+/* NAVBAR */
+.navbar-custom {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .logo {
-    width: 42px;
-    height: 42px;
+    height: 22px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 16px;
-    color: white;
+    cursor: pointer;
 }
 
-.nav-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
+/* CARD */
+.card-custom {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
-.nav-right span {
-    font-size: 13px;
-    opacity: 0.9;
-    color: white;
+/* HERO */
+.hero {
+    padding: 60px 0;
 }
 
-/* ===== CONTAINER ===== */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(14px);
-    border-radius: 18px;
-    padding: 25px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    color: white;
-}
-
-h1 {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 6px;
-}
-
-.subtitle {
-    text-align: center;
-    opacity: 0.85;
-    margin-bottom: 25px;
-    font-size: 14px;
-}
-
-/* ===== TABLE DESKTOP ===== */
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* GALLERY */
+.gallery img {
     border-radius: 14px;
-    overflow: hidden;
-}
-
-thead {
-    background: rgba(0,0,0,0.3);
-}
-
-th, td {
-    padding: 14px;
-    text-align: center;
-}
-
-tbody tr {
-    background: rgba(255,255,255,0.15);
+    cursor: pointer;
     transition: 0.3s;
+    width: 70%;
+    display: block;
+    margin: auto;
 }
 
-tbody tr:hover {
-    background: rgba(255,255,255,0.28);
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
-/* ===== BUTTON ===== */
-.btn {
-    padding: 8px 16px;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-block;
-}
-
-.btn-link {
-    background: #3498db;
-}
-
-.btn-pdf {
-    background: #e74c3c;
-}
-
-/* ===== FOOTER ===== */
-footer {
+/* TITLE */
+.gallery-title {
     text-align: center;
-    margin-top: 25px;
-    font-size: 13px;
-    opacity: 0.85;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #212529;
 }
-@media(max-width: 768px) {
 
-    h1 {
-        font-size: 22px;
-    }
+.gallery-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #0d6efd;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+.gallery-item {
+    text-align: center;
+}
 
-    thead {
-        display: none;
-    }
-
-    table {
-        display: block;
-    }
-
-    tbody {
-        display: block;
-    }
-
-    tbody tr {
-        display: block;
-        margin-bottom: 15px;
-        padding: 15px;
-        border-radius: 14px;
-        background: rgba(255,255,255,0.22);
-    }
-
-    tbody td {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 0;
-        text-align: left;
-        font-size: 14px;
-    }
-
-    tbody td::before {
-        font-weight: bold;
-        opacity: 0.85;
-    }
-
-    tbody td:nth-child(1)::before { content: "No"; }
-    tbody td:nth-child(2)::before { content: "NIM"; }
-    tbody td:nth-child(3)::before { content: "Nama"; }
-    tbody td:nth-child(4)::before { content: "Link"; }
-    tbody td:nth-child(5)::before { content: "PDF"; }
-
-    .btn {
-        font-size: 13px;
-        padding: 6px 14px;
-    }
+.gallery-caption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
 }
 
 </style>
@@ -197,110 +86,143 @@ footer {
 <body>
 
 <!-- NAVBAR -->
-<div class="navbar">
-    <div class="nav-left">
-        <div class="logo">SIF</div>
-        <div class="nav-title">01SIFP008 • PWEB 1</div>
-    </div>
-    <div class="nav-right">
-        <span>Universitas Pamulang • 2026</span>
-    </div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+        <div class="d-flex align-items-center gap-3">
+            <img src="asset/4.png"
+                 class="logo"
+                 data-bs-toggle="modal"
+                 data-bs-target="#ppModal"
+                 title="Klik untuk lihat logo kelas">
+            <span class="fw-semibold">01SIFP008 • PWEB 1</span>
+        </div>
 
+        <a href="tugas.html" class="btn btn-primary btn-sm rounded-pill">
+            Data Pengumpulan
+        </a>
+    </div>
+</nav>
+
+<!-- PROFIL KELAS -->
+<section class="hero">
 <div class="container">
-    <h1>📚 Pengumpulan Tugas</h1>
-    <div class="subtitle">Kelas 01SIFP008 • PWEB 1</div>
-<input
-    type="text"
-    id="searchInput"
-    placeholder="Cari Nama atau NIM..."
-    style="
-        width:100%;
-        padding:12px 16px;
-        margin-bottom:20px;
-        border-radius:30px;
-        border:none;
-        outline:none;
-        font-size:14px;
-    "
->
+<div class="row justify-content-center">
+<div class="col-md-9 col-lg-8">
 
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>NIM</th>
-                <th>Nama</th>
-                <th>Link</th>
-                <th>PDF</th>
-            </tr>
-        </thead>
-        <tbody id="dataTugas"></tbody>
-    </table>
+<div class="card card-custom p-5 text-center">
+    <h2 class="fw-bold mb-3">👨‍🎓👩‍🎓 Kelas 01SIFP008</h2>
+    <p class="text-muted mb-4">
+        Website resmi kelas <strong>01SIFP008</strong> mata kuliah
+        <strong>Pemrograman Web 1</strong>.
+    </p>
 
-    <footer>
-        © 2026 • Sistem Pengumpulan Tugas
-    </footer>
+    <div class="row text-start mt-4">
+        <div class="col-md-6 mb-3">
+            <strong>Mata Kuliah</strong>
+            <div class="text-muted">Pemrograman Web 1</div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <strong>Tahun Akademik</strong>
+            <div class="text-muted">2025 / 2026</div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <strong>Kelas</strong>
+            <div class="text-muted">01SIFP008</div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <strong>Universitas</strong>
+            <div class="text-muted">Universitas Pamulang</div>
+        </div>
+    </div>
 </div>
-<script>
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2IL61rnKBO29PUjq6sfLkE0jXJ0LRP0f2mnNTvjlwevA2p0WWuVAVvVgvL4DT12FLGEi_hlrPtEpO/pub?gid=0&single=true&output=csv";
 
-let dataRows = [];
+</div>
+</div>
+</div>
+</section>
+<h2 class="gallery-title">Foto Se-Kelas</h2>
 
-fetch(sheetURL)
-.then(res => res.text())
-.then(text => {
-    dataRows = text
-        .split("\n")
-        .slice(1)
-        .filter(row => row.trim() !== "")
-        .map(row => row.split(",").map(x => x.trim()));
+<div class="container mb-5">
+<div class="row g-3 gallery">
 
-    // 🔤 SORT NAMA A - Z
-    dataRows.sort((a, b) => a[1].localeCompare(b[1]));
+    <div class="col-6 col-md-4 gallery-item">
+        <img src="asset/1.jpg.jpeg"
+             data-bs-toggle="modal"
+             data-bs-target="#foto1">
+        <div class="gallery-caption">
+            Foto dengan outfit couple
+        </div>
+    </div>
 
-    renderTable(dataRows);
-});
+    <div class="col-6 col-md-4 gallery-item">
+        <img src="asset/2.jpg.jpeg"
+             data-bs-toggle="modal"
+             data-bs-target="#foto2">
+        <div class="gallery-caption">
+            Dokumentasi setelah UTS
+        </div>
+    </div>
 
-function renderTable(rows){
-    let html = "";
-    let no = 1;
+    <div class="col-6 col-md-4 gallery-item">
+        <img src="asset/3.jpg.jpeg"
+             data-bs-toggle="modal"
+             data-bs-target="#foto3">
+        <div class="gallery-caption">
+            Foto sekelas 
+        </div>
+    </div>
 
-    rows.forEach(col => {
-        const linkBtn = col[2]
-            ? `<a class="btn btn-link" href="${col[2]}" target="_blank">Link</a>`
-            : "";
+</div>
+</div>
 
-        const pdfBtn = col[3]
-            ? `<a class="btn btn-pdf" href="${col[3]}">PDF</a>`
-            : "";
 
-        html += `
-        <tr>
-            <td>${no++}</td>
-            <td>${col[0]}</td>
-            <td>${col[1]}</td>
-            <td>${linkBtn}</td>
-            <td>${pdfBtn}</td>
-        </tr>`;
-    });
+<!-- MODAL FOTO -->
+<div class="modal fade" id="foto1">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content">
+<img src="asset/1.jpg.jpeg" class="img-fluid rounded">
+</div>
+</div>
+</div>
 
-    document.getElementById("dataTugas").innerHTML = html;
-}
+<div class="modal fade" id="foto2">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content">
+<img src="asset/2.jpg.jpeg" class="img-fluid rounded">
+</div>
+</div>
+</div>
 
-// 🔍 SEARCH (Nama / NIM)
-document.getElementById("searchInput").addEventListener("input", function(){
-    const keyword = this.value.toLowerCase();
+<div class="modal fade" id="foto3">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content">
+<img src="asset/3.jpg.jpeg" class="img-fluid rounded">
+</div>
+</div>
+</div>
 
-    const filtered = dataRows.filter(col =>
-        col[0].toLowerCase().includes(keyword) || // NIM
-        col[1].toLowerCase().includes(keyword)    // Nama
-    );
+<!-- MODAL LOGO -->
+<div class="modal fade" id="ppModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content text-center p-4">
 
-    renderTable(filtered);
-});
-</script>
+<img src="asset/4.png"
+     class="img-fluid rounded-circle mb-3"
+     style="max-width:180px;margin:auto;">
 
+<h5 class="fw-bold">Logo Kelas 01SIFP008</h5>
+<p class="text-muted mb-0">
+Pemrograman Web 1<br>
+Universitas Pamulang<br>
+Tahun Akademik 2025 / 2026
+</p>
+
+</div>
+</div>
+</div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
