@@ -3,226 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home • 01SIFP008</title>
+<title>Portal Kelas • 01SIFP008</title>
 
-<!-- BOOTSTRAP -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
-body {
-    background: #f4f6f8;
-    font-family: 'Segoe UI', sans-serif;
+:root{
+  --primary:#2563eb;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+}
+body.dark{
+  --bg:#020617;
+  --card:#020617;
+  --text:#e5e7eb;
+}
+body{
+  background:var(--bg);
+  font-family:'Segoe UI',sans-serif;
+  color:var(--text);
 }
 
-/* NAVBAR */
-.navbar-custom {
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* ===== NAVBAR ===== */
+.navbar-custom{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--card);
+  border-bottom:1px solid #e5e7eb;
+}
+.navbar-wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+}
+.brand-icon{
+  width:36px;height:36px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+}
+.nav-right{
+  display:flex;
+  gap:10px;
+}
+.dark-btn{
+  border:none;
+  background:#e5e7eb;
+  width:38px;height:38px;
+  border-radius:10px;
+}
+body.dark .dark-btn{
+  background:#1e293b;
+  color:#e5e7eb;
 }
 
-.logo {
-    height: 22px;
-    border-radius: 50%;
-    cursor: pointer;
+/* ===== HERO ===== */
+.hero{padding:90px 0}
+.card{
+  background:var(--card);
+  border:none;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06)
+}
+.badge-soft{
+  background:#e0e7ff;
+  color:#1e3a8a;
 }
 
-/* CARD */
-.card-custom {
-    border-radius: 16px;
-    border: none;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+/* ===== GALLERY ===== */
+.gallery img{
+  border-radius:14px;
+  transition:.3s;
+  cursor:pointer
 }
+.gallery img:hover{transform:scale(1.05)}
 
-/* HERO */
-.hero {
-    padding: 60px 0;
+footer{
+  font-size:13px;
+  color:#64748b
 }
-
-/* GALLERY */
-.gallery img {
-    border-radius: 14px;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 70%;
-    display: block;
-    margin: auto;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* TITLE */
-.gallery-title {
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    color: #212529;
-}
-
-.gallery-title::after {
-    content: '';
-    width: 80px;
-    height: 4px;
-    background: #0d6efd;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 10px;
-}
-.gallery-item {
-    text-align: center;
-}
-
-.gallery-caption {
-    font-size: 14px;
-    color: #555;
-    margin-top: 8px;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-    <div class="container">
-        <div class="d-flex align-items-center gap-3">
-            <img src="4.png"
-                 class="logo"
-                 data-bs-toggle="modal"
-                 data-bs-target="#ppModal"
-                 title="Klik untuk lihat logo kelas">
-            <span class="fw-semibold">01SIFP008 • PWEB 1</span>
-        </div>
-
-        <a href="tugas.html" class="btn btn-primary btn-sm rounded-pill">
-            Data Pengumpulan
-        </a>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar-custom">
+  <div class="navbar-wrap">
+    <div class="brand">
+      <div class="brand-icon">📘</div>
+      <span>01SIFP008</span>
     </div>
+
+    <div class="nav-right">
+      <a href="tugas.html" class="btn btn-outline-primary btn-sm rounded-pill">
+        Data Pengumpulan
+      </a>
+    
+    </div>
+  </div>
 </nav>
 
-<!-- PROFIL KELAS -->
+<!-- ===== HERO ===== -->
 <section class="hero">
 <div class="container">
 <div class="row justify-content-center">
-<div class="col-md-9 col-lg-8">
+<div class="col-lg-8">
 
-<div class="card card-custom p-5 text-center">
-    <h2 class="fw-bold mb-3">👨‍🎓👩‍🎓 Kelas 01SIFP008</h2>
-    <p class="text-muted mb-4">
-        Website resmi kelas <strong>01SIFP008</strong> mata kuliah
-        <strong>Pemrograman Web 1</strong>.
-    </p>
+<div class="card p-5 text-center">
+<span class="badge badge-soft rounded-pill px-3 py-2 mb-3">
+Portal Akademik Kelas
+</span>
 
-    <div class="row text-start mt-4">
-        <div class="col-md-6 mb-3">
-            <strong>Mata Kuliah</strong>
-            <div class="text-muted">Pemrograman Web 1</div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <strong>Tahun Akademik</strong>
-            <div class="text-muted">2025 / 2026</div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <strong>Kelas</strong>
-            <div class="text-muted">01SIFP008</div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <strong>Universitas</strong>
-            <div class="text-muted">Universitas Pamulang</div>
-        </div>
-    </div>
+<h2 class="fw-bold">Pemrograman Web 1</h2>
+<p class="text-muted mb-4">
+Kelas <strong>01SIFP008</strong> • Universitas Pamulang<br>
+Tahun Akademik 2025 / 2026
+</p>
+
+<div class="row text-start mt-4">
+<div class="col-md-6 mb-3">
+<strong>Mata Kuliah</strong>
+<div class="text-muted">Pemrograman Web 1</div>
+</div>
+<div class="col-md-6 mb-3">
+<strong>Dosen</strong>
+<div class="text-muted">—</div>
+</div>
+<div class="col-md-6 mb-3">
+<strong>Kelas</strong>
+<div class="text-muted">01SIFP008</div>
+</div>
+<div class="col-md-6 mb-3">
+<strong>Universitas</strong>
+<div class="text-muted">Universitas Pamulang</div>
+</div>
 </div>
 
+</div>
 </div>
 </div>
 </div>
 </section>
-<h2 class="gallery-title">Foto Se-Kelas</h2>
 
-<div class="container mb-5">
+<!-- ===== GALLERY ===== -->
+<section class="container mb-5">
+<h4 class="fw-bold mb-4">Dokumentasi Kelas</h4>
 <div class="row g-3 gallery">
+<div class="col-6 col-md-4"><img src="1.jpg.jpeg" class="img-fluid"></div>
+<div class="col-6 col-md-4"><img src="2.jpg.jpeg" class="img-fluid"></div>
+<div class="col-6 col-md-4"><img src="3.jpg.jpeg" class="img-fluid"></div>
+</div>
+</section>
 
-    <div class="col-6 col-md-4 gallery-item">
-        <img src="1.jpg.jpeg"
-             data-bs-toggle="modal"
-             data-bs-target="#foto1">
-        <div class="gallery-caption">
-            Foto dengan outfit couple
-        </div>
-    </div>
+<footer class="text-center py-4">
+© 2026 • Portal Kelas 01SIFP008
+</footer>
 
-    <div class="col-6 col-md-4 gallery-item">
-        <img src="2.jpg.jpeg"
-             data-bs-toggle="modal"
-             data-bs-target="#foto2">
-        <div class="gallery-caption">
-            Dokumentasi setelah UTS
-        </div>
-    </div>
-
-    <div class="col-6 col-md-4 gallery-item">
-        <img src="3.jpg.jpeg"
-             data-bs-toggle="modal"
-             data-bs-target="#foto3">
-        <div class="gallery-caption">
-            Foto sekelas 
-        </div>
-    </div>
-
-</div>
-</div>
-
-
-<!-- MODAL FOTO -->
-<div class="modal fade" id="foto1">
-<div class="modal-dialog modal-dialog-centered modal-lg">
-<div class="modal-content">
-<img src="1.jpg.jpeg" class="img-fluid rounded">
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="foto2">
-<div class="modal-dialog modal-dialog-centered modal-lg">
-<div class="modal-content">
-<img src="2.jpg.jpeg" class="img-fluid rounded">
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="foto3">
-<div class="modal-dialog modal-dialog-centered modal-lg">
-<div class="modal-content">
-<img src="3.jpg.jpeg" class="img-fluid rounded">
-</div>
-</div>
-</div>
-
-<!-- MODAL LOGO -->
-<div class="modal fade" id="ppModal">
-<div class="modal-dialog modal-dialog-centered">
-<div class="modal-content text-center p-4">
-
-<img src="4.png"
-     class="img-fluid rounded-circle mb-3"
-     style="max-width:180px;margin:auto;">
-
-<h5 class="fw-bold">Logo Kelas 01SIFP008</h5>
-<p class="text-muted mb-0">
-Pemrograman Web 1<br>
-Universitas Pamulang<br>
-Tahun Akademik 2025 / 2026
-</p>
-
-</div>
-</div>
-</div>
-
-<!-- BOOTSTRAP JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+</script>
 
 </body>
 </html>
